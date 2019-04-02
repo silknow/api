@@ -1,0 +1,21 @@
+{
+  "proto": {
+    "id": "?is",
+    "label": "$rdfs:label|dc:identifier$required",
+    "material" : "$ecrm:P126_employed$var:?__material",
+    "time": "$ecrm:P4_has_time-span/rdfs:label$var:?__time",
+    "production":{
+      "id": "?production",
+      "location": "$ecrm:P8_took_place_on_or_within/rdfs:label$var:?__location",
+      "technique": "$ecrm:P32_used_general_technique$var:?__technique"
+    }
+  },
+  "$where": [
+    "?id a ecrm:E22_Man-Made_Object",
+    "?production ecrm:P108_has_produced ?id"
+  ],
+  "grlc": {
+    "summary": "Obtain a list of silk objects",
+    "pagination": 100
+  }
+}
