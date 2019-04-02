@@ -16,7 +16,8 @@
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "ecrm": "http://erlangen-crm.org/current/"
+    "ecrm": "http://erlangen-crm.org/current/",
+    "dc": "http://purl.org/dc/elements/1.1/"
   },
   "grlc": {
     "summary": "Obtain a list of silk objects",
