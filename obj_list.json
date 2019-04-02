@@ -1,6 +1,6 @@
 {
   "proto": {
-    "id": "?is",
+    "id": "?id",
     "label": "$rdfs:label|dc:identifier$required",
     "material": "$ecrm:P126_employed$var:?__material",
     "time": "$ecrm:P4_has_time-span/rdfs:label$var:?__time",
