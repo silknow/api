@@ -1,0 +1,46 @@
+{
+  "proto": {
+    "id": "?__id",
+    "identifier": "$dc:identifier$required",
+    "label": "$rdfs:label$bestlang",
+    "description": "$rdfs:comment$bestlang",
+    "picture": "$ecrm:P62_depicts",
+    "img": "$ecrm:P138i_has_representation/schema:contentUrl",
+    "domain": "?domain",
+    "denomination": "?denomination",
+    "production": {
+      "id": "?production",
+      "material": "$ecrm:P126_employed",
+      "time": "$ecrm:P4_has_time-span/rdfs:label",
+      "?tool": "$ecrm:P16_used_specific_object",
+      "?place": "$ecrm:P8_took_place_on_or_within",
+      "?technique": "$ecrm:P32_used_general_technique"
+    },
+    "right": {
+      "id": "?right",
+      "description": "$rdfs:comment$bestlang",
+      "owner": "$ecrm:P75i_is_possessed_by$required"
+    }
+  },
+  "$lang": "en",
+  "$where": [
+    "?__id a ecrm:E22_Man-Made_Object",
+    "?production ecrm:P108_has_produced ?__id",
+    "?right ecrm:P104i_applies_to ?__id",
+    "[] ecrm:P41_classified ?s; ecrm:P2_has_type 'domain' ;  ecrm:P42_assigned ?domain",
+    "[] ecrm:P41_classified ?s; ecrm:P2_has_type 'denomination' ; ecrm:P42_assigned ?denomination"
+  ],
+  "$prefixes": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ecrm": "http://erlangen-crm.org/current/",
+    "dc": "http://purl.org/dc/elements/1.1/"
+  },
+  "grlc": {
+    "summary": "Obtain the details of a specific silk object",
+    "tag": ["objects"],
+    "pagination": 100,
+    "defaults": {
+      "id": "http://data.silknow.org/object/405d2aaf-49ea-3274-821b-bb2013493fb5"
+    }
+  }
+}
