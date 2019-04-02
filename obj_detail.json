@@ -6,11 +6,11 @@
     "description": "$rdfs:comment$bestlang",
     "picture": "$ecrm:P62_depicts",
     "img": "$ecrm:P138i_has_representation/schema:contentUrl",
-    "domain": "?domain",
-    "denomination": "?denomination",
+    "domain": "?domain/skos:prefLabel*$bestlang",
+    "denomination": "?denomination/skos:prefLabel*$bestlang",
     "production": {
       "id": "?production",
-      "material": "$ecrm:P126_employed",
+      "material": "$ecrm:P126_employed/skos:prefLabel*$bestlang",
       "time": "$ecrm:P4_has_time-span/rdfs:label",
       "?tool": "$ecrm:P16_used_specific_object",
       "?place": "$ecrm:P8_took_place_on_or_within",
@@ -27,8 +27,8 @@
     "?__id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?__id",
     "?right ecrm:P104i_applies_to ?__id",
-    "[] ecrm:P41_classified ?s; ecrm:P2_has_type 'domain' ;  ecrm:P42_assigned ?domain",
-    "[] ecrm:P41_classified ?s; ecrm:P2_has_type 'denomination' ; ecrm:P42_assigned ?denomination"
+    "[] ecrm:P41_classified ?__id; ecrm:P2_has_type 'domain' ;  ecrm:P42_assigned ?domain",
+    "[] ecrm:P41_classified ?__id; ecrm:P2_has_type 'denomination' ; ecrm:P42_assigned ?denomination"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
