@@ -27,8 +27,8 @@
     "?__id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?__id",
     "?right ecrm:P104i_applies_to ?__id",
-    "OPTIONAL { [] ecrm:P41_classified ?__id; ecrm:P2_has_type 'domain' ;  ecrm:P42_assigned/skos:prefLabel* ?domain } ",
-    "OPTIONAL { [] ecrm:P41_classified ?__id; ecrm:P2_has_type 'denomination' ; ecrm:P42_assigned/skos:prefLabel* ?denomination }"
+    "OPTIONAL { [] ecrm:P41_classified ?__id; ecrm:P2_has_type 'domain' ;  ecrm:P42_assigned/skos:prefLabel ?domain } ",
+    "OPTIONAL { [] ecrm:P41_classified ?__id; ecrm:P2_has_type 'denomination' ; ecrm:P42_assigned/skos:prefLabel ?denomination }"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
