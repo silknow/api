@@ -14,6 +14,8 @@ WHERE {
 OPTIONAL { ?prd  ecrm:P4_has_time-span / ecrm:P78_is_identified_by ?timespan . }
 
 OPTIONAL {
+    { ?prd ecrm:P8_took_place_on_or_within / ecrm:P1_is_identified_by ?place }
+ UNION
  { ?prd ecrm:P8_took_place_on_or_within ?l
      { SELECT ?l SAMPLE(?loc) as ?place
           WHERE { ?l geonames:countryCode ?loc}
@@ -24,17 +26,35 @@ OPTIONAL { ?obj ecrm:P62_depicts ?depiction . }
       
      ?obj  dc:identifier ?id .
    
-  OPTIONAL {
-   { ?prd ecrm:P126_employed ?x
-       { SELECT ?x SAMPLE(?lab) as ?material
-             WHERE { ?x skos:prefLabel ?lab . FILTER (lang(?lab) = "en")}
-       } . FILTER(isIRI(?x)) }
-   }
+OPTIONAL {
+       { ?prd ecrm:P126_employed ?material }
+              UNION
+       { ?prd ecrm:P126_employed ?x
+         { SELECT ?x SAMPLE(?mat) as ?material
+          WHERE { ?x skos:prefLabel ?mat . FILTER (lang(?mat) = "en")}
+
+        }  
+
+     }
+
+}     
+
 
 OPTIONAL {
- { ?prd ecrm:P32_used_general_technique ?y
-     { SELECT ?y SAMPLE(?tec) as ?technique
-          WHERE { ?y skos:prefLabel ?tec . FILTER (lang(?tec) = "en")}
-       } . FILTER(isIRI(?y)) }
- }
+  { ?prd ecrm:P32_used_general_technique ?technique }
+UNION
+  { ?prd ecrm:P32_used_general_technique ?y
+
+    { SELECT ?y SAMPLE(?tec) as ?technique
+      WHERE { ?y skos:prefLabel ?tec . FILTER (lang(?tec) = "en")}
+       }   }
 }
+
+
+
+FILTER (isLiteral(?material))
+FILTER (isLiteral(?technique))
+
+
+}
+
