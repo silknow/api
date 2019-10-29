@@ -19,33 +19,27 @@ OPTIONAL { ?obj ecrm:P62_depicts ?depiction . }
      ?obj  dc:identifier ?id .
    
 OPTIONAL {
-       { ?prd ecrm:P126_employed ?material }
-              UNION
-       { ?prd ecrm:P126_employed ?x
-         { SELECT ?x SAMPLE(?mat) as ?material
-          WHERE { ?x skos:prefLabel ?mat . FILTER (lang(?mat) = "en")}
-
-        }  
-
-     }
-
+            { ?prd ecrm:P126_employed ?x
+       { SELECT ?x SAMPLE(?lab) as ?material
+         WHERE { ?x skos:prefLabel ?lab . FILTER (lang(?lab) = "en")}
+       } . FILTER(isIRI(?x)) }
+       UNION
+       { ?prd ecrm:P126_employed ?material .
+       FILTER (isIRI(?material) = false)
+       FILTER (lang(?material) = "en")}
 }     
 
 
 OPTIONAL {
-  { ?prd ecrm:P32_used_general_technique ?technique }
-UNION
-  { ?prd ecrm:P32_used_general_technique ?y
-
-    { SELECT ?y SAMPLE(?tec) as ?technique
-      WHERE { ?y skos:prefLabel ?tec . FILTER (lang(?tec) = "en")}
-       }   }
+         { ?prd ecrm:P32_used_general_technique ?x
+       { SELECT ?x SAMPLE(?lab) as ?technique
+         WHERE { ?x skos:prefLabel ?lab . FILTER (lang(?lab) = "en")}
+       } . FILTER(isIRI(?x)) }
+       UNION
+       { ?prd ecrm:P32_used_general_technique ?technique .
+        FILTER (isIRI(?technique) = false)
+        FILTER (lang(?technique) = "en")}
 }
-
-
-
-FILTER (isLiteral(?material))
-FILTER (isLiteral(?technique))
 
 
 }
