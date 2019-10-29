@@ -60,5 +60,4 @@ FILTER (isLiteral(?technique))
 
 
 }
-LIMIT 1000
 
