@@ -1,7 +1,7 @@
 prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
 prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
 
-SELECT DISTINCT ?g ?id ?obj ?technique ?place ?placestring ?depiction ?material ?timespan 
+SELECT DISTINCT ?g ?id ?obj ?technique ?depiction ?material ?timespan 
 WHERE {
   GRAPH ?g {
 
@@ -13,17 +13,6 @@ WHERE {
       ?dig ecrm:P129_is_about ?prd .
 OPTIONAL { ?prd  ecrm:P4_has_time-span / ecrm:P78_is_identified_by ?timespan . }
 
-OPTIONAL {
-
- { ?prd ecrm:P8_took_place_on_or_within ?l
-     { SELECT ?l SAMPLE(?loc) as ?place
-          WHERE { ?l geonames:countryCode ?loc}
-       }  }
-OPTIONAL
-    { ?prd ecrm:P8_took_place_on_or_within / ecrm:P1_is_identified_by ?placestring }
-
-
- }
 
 OPTIONAL { ?obj ecrm:P62_depicts ?depiction . }
       
