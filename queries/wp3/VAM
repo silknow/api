@@ -1,34 +1,25 @@
-
 prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
 prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
 
-SELECT DISTINCT ?id ?obj ?place  ?description  ?desc_line ?summary ?material ?technique
+SELECT DISTINCT ?id ?obj ?place ?description  ?desc_line ?summary ?material ?technique
 WHERE {
   GRAPH <http://data.silknow.org/vam> {
-
      ?dig a crmdig:D1_Digital_Object . }
-
-     ?dig  ecrm:P129_is_about ?obs .
-
- OPTIONAL { ?obs a crmsci:S4_Observation . }
-
-OPTIONAL {
+  ?dig  ecrm:P129_is_about ?obs .
+  OPTIONAL { ?obs a crmsci:S4_Observation . }
+  OPTIONAL {
      ?obs ecrm:P3_has_note ?description ;
           ecrm:P2_has_type "physical_description" . }
-OPTIONAL {
+  OPTIONAL {
      ?obs ecrm:P3_has_note ?desc_line ;
           ecrm:P2_has_type "descriptive_line" . }
-OPTIONAL {
+  OPTIONAL {
      ?obs ecrm:P3_has_note ?summary ;
-          ecrm:P2_has_type "summary" .
+          ecrm:P2_has_type "summary" . }
+  ?dig ecrm:P129_is_about ?obj .
+  ?dig ecrm:P129_is_about ?prd .
 
-}
-     ?dig ecrm:P129_is_about ?obj .
-     ?dig ecrm:P129_is_about ?prd .
-
-
-
-OPTIONAL {
+  OPTIONAL {
        { ?prd ecrm:P8_took_place_on_or_within ?x
        { SELECT ?x SAMPLE(?lab) as ?place
          WHERE { ?x geonames:countryCode ?lab . }
@@ -38,20 +29,18 @@ OPTIONAL {
          ?pla ecrm:P1_is_identified_by ?place .
        FILTER (contains(str(?pla), "geonames") != true)}}
 
-OPTIONAL {
-            { ?prd ecrm:P126_employed ?x
+  OPTIONAL {
+       { ?prd ecrm:P126_employed ?x
        { SELECT ?x SAMPLE(?lab) as ?material
          WHERE { ?x skos:prefLabel ?lab . FILTER (lang(?lab) = "en")}
        } . FILTER(isIRI(?x)) }
        UNION
        { ?prd ecrm:P126_employed ?material .
        FILTER (isIRI(?material) = false)
-       FILTER (lang(?material) = "en")}
-}     
+       FILTER (lang(?material) = "en")}}     
 
-
-OPTIONAL {
-         { ?prd ecrm:P32_used_general_technique ?x
+  OPTIONAL {
+       { ?prd ecrm:P32_used_general_technique ?x
        { SELECT ?x SAMPLE(?lab) as ?technique
          WHERE { ?x skos:prefLabel ?lab . FILTER (lang(?lab) = "en")}
        } . FILTER(isIRI(?x)) }
@@ -59,9 +48,6 @@ OPTIONAL {
        { ?prd ecrm:P32_used_general_technique ?technique .
         FILTER (isIRI(?technique) = false)
         FILTER (lang(?technique) = "en")}
+  }
+  ?obj  dc:identifier ?id .
 }
-
-     ?obj  dc:identifier ?id .
-
-}
-

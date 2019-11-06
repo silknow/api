@@ -4,33 +4,29 @@ prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
 SELECT DISTINCT ?id ?obj ?place ?depiction  ?timespan ?description ?title ?genese ?historique ?bibliographie
 WHERE {
   GRAPH <http://data.silknow.org/joconde> {
-
      ?dig a crmdig:D1_Digital_Object . }
 
-OPTIONAL {
+  OPTIONAL {
      ?dig  ecrm:P129_is_about ?obs .
-
      ?obs a crmsci:S4_Observation .
-
      ?obs ecrm:P3_has_note ?description ;
           ecrm:P2_has_type "Description" . }
-OPTIONAL {
+  OPTIONAL {
      ?dig  ecrm:P129_is_about ?prop .
      ?prop a ecrm:E89_Propositional_Object .
      ?prop ecrm:P3_has_note ?genese . }
 
-     ?dig ecrm:P129_is_about ?obj .
-     ?dig ecrm:P129_is_about ?prd .
-     OPTIONAL { ?prd  ecrm:P4_has_time-span / ecrm:P78_is_identified_by ?timespan . }
+  ?dig ecrm:P129_is_about ?obj .
+  ?dig ecrm:P129_is_about ?prd .
+  OPTIONAL { ?prd  ecrm:P4_has_time-span / ecrm:P78_is_identified_by ?timespan . }
 
-OPTIONAL {
+  OPTIONAL {
       ?dig ecrm:P129_is_about ?bib .
       ?bib a ecrm:E73_Information_Object .
       ?bib ecrm:P3_has_note ?bibliographie ;
           ecrm:P2_has_type "Bibliographie"@fr . }
 
-
-OPTIONAL {
+  OPTIONAL {
        { ?prd ecrm:P8_took_place_on_or_within ?x
        { SELECT ?x SAMPLE(?lab) as ?place
          WHERE { ?x geonames:countryCode ?lab . }
@@ -40,13 +36,10 @@ OPTIONAL {
          ?pla ecrm:P1_is_identified_by ?place .
        FILTER (contains(str(?pla), "geonames") != true)}}
 
-     OPTIONAL { ?obj ecrm:P62_depicts ?depiction . }
-     OPTIONAL { ?obj ecrm:P3_has_note ?historique . }
+  OPTIONAL { ?obj ecrm:P62_depicts ?depiction . }
+  OPTIONAL { ?obj ecrm:P3_has_note ?historique . }
 
-     ?obj  dc:identifier ?id .
+  ?obj  dc:identifier ?id .
 
-OPTIONAL {
-     ?obj ecrm:P102_has_title ?title . }
-
+  OPTIONAL { ?obj ecrm:P102_has_title ?title . }
 }
-
