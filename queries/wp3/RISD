@@ -1,4 +1,4 @@
-prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>
 prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
 
 SELECT DISTINCT ?id ?obj ?place  ?timespan  ?material ?technique ?title
@@ -20,9 +20,10 @@ WHERE {
          ?pla ecrm:P1_is_identified_by ?place .
        FILTER (contains(str(?pla), "geonames") != true)}}
 
-  ?obj  dc:identifier ?id .
-  ?obj ecrm:P102_has_title ?title .
-     
+  ?obj  dc:identifier ?id;
+   a ecrm: E22_Man-Made_Object ;
+   ecrm:P102_has_title ?title .
+
   OPTIONAL {
        { ?prd ecrm:P126_employed ?x
        { SELECT ?x SAMPLE(?lab) as ?material
@@ -31,7 +32,7 @@ WHERE {
        UNION
        { ?prd ecrm:P126_employed ?material .
        FILTER (isIRI(?material) = false)
-       FILTER (lang(?material) = "en")}}  
+       FILTER (lang(?material) = "en")}}
 
   OPTIONAL {
        { ?prd ecrm:P32_used_general_technique ?x

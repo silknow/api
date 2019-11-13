@@ -1,7 +1,7 @@
-prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>
 prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
 
-SELECT DISTINCT ?id ?obj  ?place ?timespan ?description 
+SELECT DISTINCT ?id ?obj  ?place ?timespan ?description
 WHERE {
   GRAPH <http://data.silknow.org/mfa> {
      ?dig a crmdig:D1_Digital_Object . }
@@ -26,6 +26,6 @@ WHERE {
          ?pla ecrm:P1_is_identified_by ?place .
        FILTER (contains(str(?pla), "geonames") != true)}}
 
-  ?obj  dc:identifier ?id .
+   ?obj dc:identifier ?id;
+        a ecrm: E22_Man-Made_Object .
 }
-

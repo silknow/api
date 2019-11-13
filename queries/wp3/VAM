@@ -1,4 +1,4 @@
-prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>
 prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
 
 SELECT DISTINCT ?id ?obj ?place ?description  ?desc_line ?summary ?material ?technique
@@ -37,7 +37,7 @@ WHERE {
        UNION
        { ?prd ecrm:P126_employed ?material .
        FILTER (isIRI(?material) = false)
-       FILTER (lang(?material) = "en")}}     
+       FILTER (lang(?material) = "en")}}
 
   OPTIONAL {
        { ?prd ecrm:P32_used_general_technique ?x
@@ -49,5 +49,7 @@ WHERE {
         FILTER (isIRI(?technique) = false)
         FILTER (lang(?technique) = "en")}
   }
-  ?obj  dc:identifier ?id .
+  
+  ?obj dc:identifier ?id;
+       a ecrm: E22_Man-Made_Object .
 }

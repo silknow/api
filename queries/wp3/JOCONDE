@@ -1,4 +1,4 @@
-prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>
 prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
 
 SELECT DISTINCT ?id ?obj ?place ?depiction  ?timespan ?description ?title ?genese ?historique ?bibliographie
@@ -39,7 +39,8 @@ WHERE {
   OPTIONAL { ?obj ecrm:P62_depicts ?depiction . }
   OPTIONAL { ?obj ecrm:P3_has_note ?historique . }
 
-  ?obj  dc:identifier ?id .
+  ?obj dc:identifier ?id;
+       a ecrm: E22_Man-Made_Object .
 
   OPTIONAL { ?obj ecrm:P102_has_title ?title . }
 }

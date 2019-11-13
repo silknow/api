@@ -1,4 +1,4 @@
-prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
+prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>
 prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
 
 SELECT DISTINCT ?id ?obj  ?place ?material ?timespan ?description
@@ -10,7 +10,7 @@ WHERE {
   OPTIONAL {
      ?obs a crmsci:S4_Observation .
      ?obs ecrm:P3_has_note ?description ;
-          ecrm:P2_has_type "description" . }  
+          ecrm:P2_has_type "description" . }
 
   ?dig ecrm:P129_is_about ?obj .
   ?dig ecrm:P129_is_about ?prd .
@@ -25,8 +25,10 @@ WHERE {
        { ?prd ecrm:P8_took_place_on_or_within ?pla .
          ?pla ecrm:P1_is_identified_by ?place .
        FILTER (contains(str(?pla), "geonames") != true)}}
-     ?obj  dc:identifier ?id .
-     
+       
+   ?obj dc:identifier ?id;
+        a ecrm: E22_Man-Made_Object .
+
   OPTIONAL {
        { ?prd ecrm:P126_employed ?x
        { SELECT ?x SAMPLE(?lab) as ?material
@@ -35,6 +37,5 @@ WHERE {
        UNION
        { ?prd ecrm:P126_employed ?material .
        FILTER (isIRI(?material) = false)
-       FILTER (lang(?material) = "en")}}    
+       FILTER (lang(?material) = "en")}}
 }
-
