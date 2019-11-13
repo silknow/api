@@ -27,5 +27,5 @@ WHERE {
        FILTER (contains(str(?pla), "geonames") != true)}}
 
    ?obj dc:identifier ?id;
-        a ecrm: E22_Man-Made_Object .
+        a ecrm:E22_Man-Made_Object .
 }

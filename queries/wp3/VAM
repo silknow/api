@@ -49,7 +49,7 @@ WHERE {
         FILTER (isIRI(?technique) = false)
         FILTER (lang(?technique) = "en")}
   }
-  
+
   ?obj dc:identifier ?id;
-       a ecrm: E22_Man-Made_Object .
+       a ecrm:E22_Man-Made_Object .
 }

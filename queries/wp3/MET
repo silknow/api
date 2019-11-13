@@ -25,9 +25,9 @@ WHERE {
        { ?prd ecrm:P8_took_place_on_or_within ?pla .
          ?pla ecrm:P1_is_identified_by ?place .
        FILTER (contains(str(?pla), "geonames") != true)}}
-       
+
    ?obj dc:identifier ?id;
-        a ecrm: E22_Man-Made_Object .
+        a ecrm:E22_Man-Made_Object .
 
   OPTIONAL {
        { ?prd ecrm:P126_employed ?x

@@ -33,7 +33,7 @@ WHERE {
   OPTIONAL { ?obj ecrm:P62_depicts ?depiction . }
 
   ?obj dc:identifier ?id;
-       a ecrm: E22_Man-Made_Object .
+       a ecrm:E22_Man-Made_Object .
 
   OPTIONAL {
        { ?prd ecrm:P32_used_general_technique ?x

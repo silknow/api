@@ -40,7 +40,7 @@ WHERE {
   OPTIONAL { ?obj ecrm:P3_has_note ?historique . }
 
   ?obj dc:identifier ?id;
-       a ecrm: E22_Man-Made_Object .
+       a ecrm:E22_Man-Made_Object .
 
   OPTIONAL { ?obj ecrm:P102_has_title ?title . }
 }
