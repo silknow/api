@@ -10,7 +10,7 @@ WHERE {
   OPTIONAL {
     ?obs a crmsci:S4_Observation .
     ?obs ecrm:P3_has_note ?description ;
-          ecrm:P2_has_type "description" . }
+          ecrm:P2_has_type "Description" . }
 
   ?dig ecrm:P129_is_about ?obj .
   ?dig ecrm:P129_is_about ?prd .
