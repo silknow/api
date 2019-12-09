@@ -11,5 +11,4 @@ WHERE {
       ?obj ecrm:P138i_has_representation ?url1 .
       ?url1 schema:contentUrl ?url.
 }
-}
 
