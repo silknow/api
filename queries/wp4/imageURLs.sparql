@@ -1,20 +1,15 @@
 prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
 prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
-
-SELECT DISTINCT ?g ?id ?obj ?url ?imgid
+SELECT DISTINCT ?g ?id ?obj ?url 
 WHERE {
   GRAPH ?g {
-
      ?dig a crmdig:D1_Digital_Object . }
-     ?dig  ecrm:P129_is_about ?img .
-      ?img a ecrm:E38_Image .
-      ?img schema:contentUrl ?url .
-      ?img dc:identifier ?imgid .
-
+  
       ?dig ecrm:P129_is_about ?obj .
       ?obj a ecrm:E22_Man-Made_Object .
       ?obj  dc:identifier ?id .
-
-
+      ?obj ecrm:P138i_has_representation ?url1 .
+      ?url1 schema:contentUrl ?url.
+}
 }
 
