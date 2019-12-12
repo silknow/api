@@ -1,3 +1,4 @@
+
 prefix crmdig: <http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/>  
 prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/>
 SELECT DISTINCT ?g ?id ?obj ?url 
@@ -10,5 +11,6 @@ WHERE {
       ?obj  dc:identifier ?id .
       ?obj ecrm:P138i_has_representation ?url1 .
       ?url1 schema:contentUrl ?url.
-}
 
+FILTER contains(str(?url), "silknow")
+}
