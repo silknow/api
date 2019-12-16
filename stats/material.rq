@@ -1,0 +1,28 @@
+SELECT DISTINCT count(distinct ?prod) as ?count,  ?matched, ?label
+WHERE {
+  VALUES ?g {
+    <http://data.silknow.org/joconde>
+    <http://data.silknow.org/garin>
+    <http://data.silknow.org/imatex>
+    <http://data.silknow.org/mad>
+    <http://data.silknow.org/mtmad>
+    <http://data.silknow.org/risd>
+    <http://data.silknow.org/unipa>
+  }
+
+
+  GRAPH ?g {  ?prod a ecrm:E12_Production }
+  {
+    ?prod ecrm:P126_employed ?matched .
+    { SELECT ?matched sql:BEST_LANGMATCH(?label, 'en, en-gb;q=0.8, *;q=0.1', '') as ?label
+    WHERE { ?matched skos:prefLabel ?label }
+  }
+  FILTER isIRI(?matched)
+
+  } UNION {
+    ?prod ecrm:P126_employed ?label
+    FILTER isLiteral(?label)
+  }
+}
+GROUP BY ?matched ?label
+ORDER BY DESC(?count)

@@ -1,0 +1,32 @@
+SELECT DISTINCT count(distinct ?prod) as ?count,  ?matched, ?label
+WHERE {
+  VALUES ?g {
+    <http://data.silknow.org/joconde>
+    <http://data.silknow.org/garin>
+    <http://data.silknow.org/imatex>
+    <http://data.silknow.org/mad>
+    <http://data.silknow.org/mtmad>
+    <http://data.silknow.org/risd>
+    <http://data.silknow.org/unipa>
+  }
+
+
+  GRAPH ?g {  ?prod a ecrm:E12_Production }
+
+  {
+    ?prod ecrm:P8_took_place_on_or_within ?matched
+    {
+      SELECT ?matched sql:BEST_LANGMATCH(?lab, 'en, en-gb;q=0.8, *;q=0.1', '') as ?label
+      WHERE { ?matched geonames:countryCode ?lab . }
+    }
+    FILTER(isIRI(?x))
+  }
+  UNION
+  { ?prod ecrm:P8_took_place_on_or_within ?matched .
+    ?matched ecrm:P1_is_identified_by ?label .
+    FILTER (contains(str(?matched), "geonames") != true)
+  }
+
+}
+GROUP BY ?matched ?label
+ORDER BY DESC(?count)
