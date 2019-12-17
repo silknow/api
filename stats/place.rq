@@ -14,12 +14,9 @@ WHERE {
   GRAPH ?g {  ?prod a ecrm:E12_Production }
 
   {
-    ?prod ecrm:P8_took_place_on_or_within ?matched
-    {
-      SELECT ?matched sql:BEST_LANGMATCH(?lab, 'en, en-gb;q=0.8, *;q=0.1', '') as ?label
-      WHERE { ?matched geonames:countryCode ?lab . }
-    }
-    FILTER(isIRI(?x))
+    ?prod ecrm:P8_took_place_on_or_within ?matched .
+    ?matched geonames:countryCode ?label .
+    FILTER(isIRI(?matched))
   }
   UNION
   { ?prod ecrm:P8_took_place_on_or_within ?matched .
