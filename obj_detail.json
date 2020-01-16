@@ -41,8 +41,8 @@
     "summary": "Obtain the details of a specific silk object",
     "tag": ["objects"],
     "pagination": 100,
-    "defaults": {
-      "id": "http://data.silknow.org/object/405d2aaf-49ea-3274-821b-bb2013493fb5"
-    }
+    "defaults": [
+      {"id": "http://data.silknow.org/object/405d2aaf-49ea-3274-821b-bb2013493fb5"}
+    ]
   }
 }
