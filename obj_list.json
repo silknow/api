@@ -3,10 +3,14 @@
     "id": "?id",
     "label": "$rdfs:label|dc:identifier$required",
     "material": "$ecrm:P126_employed$var:?__material",
-    "picture": "$ecrm:P62_depicts$sample",
     "production": {
       "id": "?production",
-      "location": "$ecrm:P8_took_place_on_or_within/rdfs:label$var:?__location",
+      "location": {
+           "id" : "$ecrm:P8_took_place_on_or_within",
+           "label" : "$rdfs:label$var:?__location$required",
+	         "lat" : "$geo:lat",
+           "long" : "$geo:long"
+      },
       "technique": "$ecrm:P32_used_general_technique$var:?__technique",
       "time": "$ecrm:P4_has_time-span/rdfs:label$var:?__time"
     }
@@ -18,7 +22,8 @@
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "ecrm": "http://erlangen-crm.org/current/",
-    "dc": "http://purl.org/dc/elements/1.1/"
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#"
   },
   "grlc": {
     "summary": "Obtain a list of silk objects",
