@@ -2,9 +2,9 @@
   "proto": {
     "id": "?id",
     "label": "$rdfs:label|dc:identifier$required",
-    "material": "$ecrm:P126_employed$var:?__material",
     "production": {
       "id": "?production",
+      "material": "$ecrm:P126_employed$var:?__material",
       "location": {
            "id" : "$ecrm:P8_took_place_on_or_within",
            "label" : "$rdfs:label$var:?__location$required",

@@ -19,7 +19,7 @@
     "right": {
       "id": "?right",
       "description": "$rdfs:comment$bestlang",
-      "owner": "$ecrm:P75i_is_possessed_by$required"
+      "owner": "$ecrm:P75i_is_possessed_by"
     }
   },
   "$lang": "en",
