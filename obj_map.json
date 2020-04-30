@@ -4,16 +4,16 @@
     "label": "$rdfs:label|dc:identifier$required",
     "production": {
       "id": "?production",
-      "material": "$ecrm:P126_employed$var:?__material",
+      "material": "$ecrm:P126_employed/skos:prefLabel$var:?__material$lang:en",
       "location": {
            "id" : "$ecrm:P8_took_place_on_or_within$required",
            "label" : "$geonames:name$var:?__location$required",
-	         "lat" : "$geo:lat$required",
+	    "lat" : "$geo:lat$required",
            "long" : "$geo:long$required",
-           "country" : "$geonames:parentCountry/geonames:name$required"
+           "country" : "$geonames:parentCountry/geonames:name$var:?__country$required"
       },
-      "technique": "$ecrm:P32_used_general_technique$var:?__technique",
-      "time": "$ecrm:P4_has_time-span/rdfs:label$var:?__time"
+      "technique": "$ecrm:P32_used_general_technique/skos:prefLabel$var:?__technique$lang:en",
+      "time": "$ecrm:P4_has_time-span/skos:prefLabel$required$var:?__time$lang:en"
     }
   },
   "$where": [
@@ -25,12 +25,12 @@
     "ecrm": "http://erlangen-crm.org/current/",
     "dc": "http://purl.org/dc/elements/1.1/",
     "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",
-    "geonames":"http://www.geonames.org/ontology#"
+    "geonames":"http://www.geonames.org/ontology#",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
   },
   "$langTag" : "hide",
-  "$limit":100,
   "grlc": {
-    "summary": "Obtain a list of silk objects",
+    "summary": "Obtain a list of silk objects (map version)",
     "tag": ["objects"],
     "pagination": 100
   }
