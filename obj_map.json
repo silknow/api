@@ -1,0 +1,37 @@
+{
+  "proto": {
+    "id": "?id",
+    "label": "$rdfs:label|dc:identifier$required",
+    "production": {
+      "id": "?production",
+      "material": "$ecrm:P126_employed$var:?__material",
+      "location": {
+           "id" : "$ecrm:P8_took_place_on_or_within$required",
+           "label" : "$geonames:name$var:?__location$required",
+	         "lat" : "$geo:lat$required",
+           "long" : "$geo:long$required",
+           "country" : "$geonames:parentCountry/geonames:name$required"
+      },
+      "technique": "$ecrm:P32_used_general_technique$var:?__technique",
+      "time": "$ecrm:P4_has_time-span/rdfs:label$var:?__time"
+    }
+  },
+  "$where": [
+    "?id a ecrm:E22_Man-Made_Object",
+    "?production ecrm:P108_has_produced ?id"
+  ],
+  "$prefixes": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ecrm": "http://erlangen-crm.org/current/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "geonames":"http://www.geonames.org/ontology#"
+  },
+  "$langTag" : "hide",
+  "$limit":100,
+  "grlc": {
+    "summary": "Obtain a list of silk objects",
+    "tag": ["objects"],
+    "pagination": 100
+  }
+}
