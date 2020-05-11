@@ -17,7 +17,7 @@
       "?technique": "$ecrm:P32_used_general_technique"
     },
     "right": {
-      "id": "?right",
+      "id": "$ecrm:P104i_applies_to$reverse",
       "description": "$rdfs:comment$bestlang",
       "owner": "$ecrm:P75i_is_possessed_by"
     }
@@ -26,7 +26,6 @@
   "$where": [
     "?__id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?__id",
-    "?right ecrm:P104i_applies_to ?__id",
     "OPTIONAL { [] ecrm:P41_classified ?__id; ecrm:P2_has_type 'domain' ;  ecrm:P42_assigned/skos:prefLabel ?domain } ",
     "OPTIONAL { [] ecrm:P41_classified ?__id; ecrm:P2_has_type 'denomination' ; ecrm:P42_assigned/skos:prefLabel ?denomination }"
   ],
@@ -36,13 +35,5 @@
     "dc": "http://purl.org/dc/elements/1.1/",
     "schema": "http://schema.org/",
     "skos": "http://www.w3.org/2004/02/skos/core#"
-  },
-  "grlc": {
-    "summary": "Obtain the details of a specific silk object",
-    "tag": ["objects"],
-    "pagination": 100,
-    "defaults": [
-      {"id": "http://data.silknow.org/object/405d2aaf-49ea-3274-821b-bb2013493fb5"}
-    ]
   }
 }
