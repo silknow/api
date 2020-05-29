@@ -23,7 +23,6 @@
     "geonames":"http://www.geonames.org/ontology#",
     "skos": "http://www.w3.org/2004/02/skos/core#"
   },
-  "$values":{"__id":"http://data.silknow.org/vocabulary/168"},
   "$lang": "en",
   "$langTag" : "hide",
   "grlc": {
