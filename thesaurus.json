@@ -9,7 +9,7 @@
     "closedMatch": "$skos:closeMatch",
     "isMemberOf": {
         "facet": "$skos:member+$reverse$anchor",
-        "label": "$skos:prefLabel$required$lang"
+        "label": "$skos:prefLabel$required$bestlang"
       }
   },
   "$where": [
