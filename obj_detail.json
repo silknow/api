@@ -1,20 +1,23 @@
 {
   "proto": {
     "id": "?__id",
-    "identifier": "$dc:identifier$required",
     "label": "$rdfs:label$bestlang",
     "description": "$rdfs:comment$bestlang",
     "picture": "$ecrm:P62_depicts",
     "img": "$ecrm:P138i_has_representation/schema:contentUrl",
-    "domain": "?domain$bestlang",
-    "denomination": "?denomination$bestlang",
     "production": {
       "id": "?production",
-      "material": "$ecrm:P126_employed/skos:prefLabel*$bestlang",
-      "time": "$ecrm:P4_has_time-span/rdfs:label",
-      "?tool": "$ecrm:P16_used_specific_object",
-      "?place": "$ecrm:P8_took_place_on_or_within",
-      "?technique": "$ecrm:P32_used_general_technique"
+      "location": {
+           "id" : "$ecrm:P8_took_place_on_or_within$required",
+           "label" : "$geonames:name$required",
+           "lat" : "$geo:lat$required",
+           "long" : "$geo:long$required",
+           "country" : "$geonames:parentCountry/geonames:name$required"
+      },
+
+      "material": "$ecrm:P126_employed/skos:prefLabel$lang",
+      "time": "$ecrm:P4_has_time-span/skos:prefLabel$lang",
+      "technique": "$ecrm:P32_used_general_technique/skos:prefLabel$lang"
     },
     "right": {
       "id": "$ecrm:P104i_applies_to$reverse",
@@ -25,9 +28,7 @@
   "$lang": "en",
   "$where": [
     "?__id a ecrm:E22_Man-Made_Object",
-    "?production ecrm:P108_has_produced ?__id",
-    "OPTIONAL { [] ecrm:P41_classified ?__id; ecrm:P2_has_type 'domain' ;  ecrm:P42_assigned/skos:prefLabel ?domain } ",
-    "OPTIONAL { [] ecrm:P41_classified ?__id; ecrm:P2_has_type 'denomination' ; ecrm:P42_assigned/skos:prefLabel ?denomination }"
+    "?production ecrm:P108_has_produced ?__id"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
