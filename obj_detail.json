@@ -1,6 +1,6 @@
 {
   "proto": {
-    "id": "?__id",
+    "id": "?_id",
     "label": "$rdfs:label$bestlang",
     "description": "$rdfs:comment$bestlang",
     "picture": "$ecrm:P62_depicts/skos:prefLabel$lang",
@@ -28,7 +28,7 @@
   "$lang": "en",
   "$langTag" : "hide",
   "$where": [
-    "?__id a ecrm:E22_Man-Made_Object",
+    "?_id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?__id"
   ],
   "$prefixes": {
