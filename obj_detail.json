@@ -2,7 +2,7 @@
   "proto": {
     "id": "?_id",
     "label": "$rdfs:label",
-    "identifier": "dc:identifier$required",
+    "identifier": "$dc:identifier$required",
     "description": "$rdfs:comment$bestlang",
     "picture": "$ecrm:P62_depicts/skos:prefLabel$lang",
     "img": "$ecrm:P138i_has_representation/schema:contentUrl",
