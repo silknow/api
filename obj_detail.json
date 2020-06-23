@@ -35,6 +35,7 @@
     "ecrm": "http://erlangen-crm.org/current/",
     "dc": "http://purl.org/dc/elements/1.1/",
     "schema": "http://schema.org/",
-    "skos": "http://www.w3.org/2004/02/skos/core#"
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "geonames":"http://www.geonames.org/ontology#"
   }
 }
