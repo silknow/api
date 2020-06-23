@@ -29,7 +29,7 @@
   "$langTag" : "hide",
   "$where": [
     "?_id a ecrm:E22_Man-Made_Object",
-    "?production ecrm:P108_has_produced ?__id"
+    "?production ecrm:P108_has_produced ?_id"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
