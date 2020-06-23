@@ -1,7 +1,8 @@
 {
   "proto": {
     "id": "?_id",
-    "label": "$rdfs:label$bestlang",
+    "label": "$rdfs:label",
+    "identifier": "dc:identifier$required",
     "description": "$rdfs:comment$bestlang",
     "picture": "$ecrm:P62_depicts/skos:prefLabel$lang",
     "img": "$ecrm:P138i_has_representation/schema:contentUrl",
@@ -12,7 +13,7 @@
            "label" : "$geonames:name$required",
            "lat" : "$geo:lat$required",
            "long" : "$geo:long$required",
-           "country" : "$geonames:parentCountry/geonames:name$required"
+           "country" : "$geonames:parentCountry/geonames:name"
       },
 
       "material": "$ecrm:P126_employed/skos:prefLabel$lang",
@@ -31,6 +32,7 @@
     "?_id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?_id"
   ],
+  "$values": {"_id":"http://data.silknow.org/object/b6680674-efb4-3df6-b592-3f5702cd2d56"},
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "ecrm": "http://erlangen-crm.org/current/",

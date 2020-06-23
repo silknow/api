@@ -1,7 +1,8 @@
 {
   "proto": {
     "id": "?id",
-    "label": "$rdfs:label|dc:identifier$required",
+    "label": "$rdfs:label",
+    "identifier": "$dc:identifier$required",
     "production": {
       "id": "?production",
       "material": "$ecrm:P126_employed/skos:prefLabel$var:?__material$lang",
