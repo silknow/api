@@ -3,7 +3,7 @@
     "id": "?__id",
     "label": "$rdfs:label$bestlang",
     "description": "$rdfs:comment$bestlang",
-    "picture": "$ecrm:P62_depicts",
+    "picture": "$ecrm:P62_depicts/skos:prefLabel$lang",
     "img": "$ecrm:P138i_has_representation/schema:contentUrl",
     "production": {
       "id": "?production",
@@ -26,6 +26,7 @@
     }
   },
   "$lang": "en",
+  "$langTag" : "hide",
   "$where": [
     "?__id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?__id"
