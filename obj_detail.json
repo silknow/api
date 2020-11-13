@@ -10,6 +10,7 @@
       "id": "?production",
       "location": {
            "id" : "$ecrm:P8_took_place_on_or_within$required",
+           "type" : "$geonames:featureCode$required",
            "label" : "$geonames:name$required",
            "lat" : "$geo:lat$required",
            "long" : "$geo:long$required",

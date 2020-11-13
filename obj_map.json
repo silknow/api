@@ -7,11 +7,12 @@
       "id": "?production",
       "material": "$ecrm:P126_employed/skos:prefLabel$var:?__material$lang",
       "location": {
-           "id" : "$ecrm:P8_took_place_on_or_within$required",
-           "label" : "$geonames:name$var:?__location$required",
-	          "lat" : "$geo:lat$required",
-           "long" : "$geo:long$required",
-           "country" : "$geonames:parentCountry/geonames:name$var:?__country"
+        "id" : "$ecrm:P8_took_place_on_or_within$required",
+        "type" : "$geonames:featureCode$required",
+        "label" : "$geonames:name$var:?__location$required",
+	      "lat" : "$geo:lat$required",
+        "long" : "$geo:long$required",
+        "country" : "$geonames:parentCountry/geonames:name$var:?__country"
       },
       "technique": "$ecrm:P32_used_general_technique/skos:prefLabel$var:?__technique$lang",
       "time": "$ecrm:P4_has_time-span/skos:prefLabel$required$var:?__time$lang"
