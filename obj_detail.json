@@ -19,14 +19,17 @@
 
       "material": "$ecrm:P126_employed/skos:prefLabel$lang",
       "time": "$ecrm:P4_has_time-span/skos:prefLabel$lang",
-      "technique": "$ecrm:P32_used_general_technique/skos:prefLabel$lang"
+      "technique": "$ecrm:P32_used_general_technique/skos:prefLabel$lang",
+      "category":{
+        "id": "?assignedGroup",
+        "label": "$skos:prefLabel$lang:en"
+      }
     },
     "right": {
       "id": "$ecrm:P104i_applies_to$reverse",
       "description": "$rdfs:comment$bestlang",
       "owner": "$ecrm:P75i_is_possessed_by"
-    },
-    "catergory":"?assignedGroup"
+    }
   },
   "$lang": "en",
   "$langTag" : "hide",
@@ -38,6 +41,7 @@
   "$values": {"_id":"http://data.silknow.org/object/b6680674-efb4-3df6-b592-3f5702cd2d56"},
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "crmdig": "http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/",
     "ecrm": "http://erlangen-crm.org/current/",
     "dc": "http://purl.org/dc/elements/1.1/",
     "schema": "http://schema.org/",
