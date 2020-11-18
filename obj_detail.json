@@ -25,13 +25,15 @@
       "id": "$ecrm:P104i_applies_to$reverse",
       "description": "$rdfs:comment$bestlang",
       "owner": "$ecrm:P75i_is_possessed_by"
-    }
+    },
+    "catergory":"?assignedGroup"
   },
   "$lang": "en",
   "$langTag" : "hide",
   "$where": [
     "?_id a ecrm:E22_Man-Made_Object",
-    "?production ecrm:P108_has_produced ?_id"
+    "?production ecrm:P108_has_produced ?_id",
+    "OPTIONAL { ?dig ecrm:P129_is_about ?production. ?dig a crmdig:D1_Digital_Object . ?dig ecrm:P129_is_about/ecrm:P42_assigned ?digTypeAssigned .  ?assignedGroup skos:member ?digTypeAssigned .}"
   ],
   "$values": {"_id":"http://data.silknow.org/object/b6680674-efb4-3df6-b592-3f5702cd2d56"},
   "$prefixes": {
