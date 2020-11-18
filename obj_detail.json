@@ -22,7 +22,7 @@
       "technique": "$ecrm:P32_used_general_technique/skos:prefLabel$lang",
       "category":{
         "id": "?assignedGroup",
-        "label": "$skos:prefLabel$lang:en"
+        "label": "?assignedGroupLabel"
       }
     },
     "right": {
@@ -36,7 +36,7 @@
   "$where": [
     "?_id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?_id",
-    "OPTIONAL { ?dig ecrm:P129_is_about ?production. ?dig a crmdig:D1_Digital_Object . ?dig ecrm:P129_is_about/ecrm:P42_assigned ?digTypeAssigned .  ?assignedGroup skos:member ?digTypeAssigned .}"
+    "OPTIONAL { ?dig ecrm:P129_is_about ?production. ?dig a crmdig:D1_Digital_Object . ?dig ecrm:P129_is_about/ecrm:P42_assigned ?digTypeAssigned .  ?assignedGroup skos:member ?digTypeAssigned . ?assignedGroup skos:prefLabel ?assignedGroupLabel }"
   ],
   "$values": {"_id":"http://data.silknow.org/object/b6680674-efb4-3df6-b592-3f5702cd2d56"},
   "$prefixes": {

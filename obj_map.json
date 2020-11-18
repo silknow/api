@@ -18,14 +18,14 @@
       "time": "$ecrm:P4_has_time-span/skos:prefLabel$required$var:?__time$lang",
       "category":{
         "id": "?assignedGroup",
-        "label": "$skos:prefLabel$lang:en"
+        "label": "?assignedGroupLabel"
       }
     }
   },
   "$where": [
     "?id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?id",
-    "OPTIONAL { ?dig ecrm:P129_is_about ?production. ?dig a crmdig:D1_Digital_Object . ?dig ecrm:P129_is_about/ecrm:P42_assigned ?digTypeAssigned .  ?assignedGroup skos:member ?digTypeAssigned .}"
+    "OPTIONAL { ?dig ecrm:P129_is_about ?production. ?dig a crmdig:D1_Digital_Object . ?dig ecrm:P129_is_about/ecrm:P42_assigned ?digTypeAssigned .  ?assignedGroup skos:member ?digTypeAssigned . ?assignedGroup skos:prefLabel ?assignedGroupLabel }"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
