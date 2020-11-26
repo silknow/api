@@ -3,7 +3,7 @@
     "id": "?_id",
     "label": "$rdfs:label",
     "identifier": "$dc:identifier$required",
-    "description": "$rdfs:comment$bestlang",
+    "description": "$rdfs:comment",
     "picture": "$ecrm:P62_depicts/skos:prefLabel$lang",
     "img": "$ecrm:P138i_has_representation/schema:contentUrl",
     "production": {
@@ -16,19 +16,13 @@
            "long" : "$geo:long$required",
            "country" : "$geonames:parentCountry/geonames:name"
       },
-
       "material": "$ecrm:P126_employed/skos:prefLabel$lang",
       "time": "$ecrm:P4_has_time-span/skos:prefLabel$lang",
       "technique": "$ecrm:P32_used_general_technique/skos:prefLabel$lang",
-      "category":{
+      "category": {
         "id": "?assignedGroup",
         "label": "?assignedGroupLabel"
       }
-    },
-    "right": {
-      "id": "$ecrm:P104i_applies_to$reverse",
-      "description": "$rdfs:comment$bestlang",
-      "owner": "$ecrm:P75i_is_possessed_by"
     }
   },
   "$lang": "en",
@@ -38,15 +32,5 @@
     "?production ecrm:P108_has_produced ?_id",
     "OPTIONAL { ?dig ecrm:P129_is_about ?production. ?dig a crmdig:D1_Digital_Object . ?dig ecrm:P129_is_about/ecrm:P42_assigned ?digTypeAssigned .  ?assignedGroup skos:member ?digTypeAssigned . ?assignedGroup skos:prefLabel ?assignedGroupLabel }"
   ],
-  "$values": {"_id":"http://data.silknow.org/object/b6680674-efb4-3df6-b592-3f5702cd2d56"},
-  "$prefixes": {
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "crmdig": "http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/",
-    "ecrm": "http://erlangen-crm.org/current/",
-    "dc": "http://purl.org/dc/elements/1.1/",
-    "schema": "http://schema.org/",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",
-    "geonames":"http://www.geonames.org/ontology#"
-  }
+  "$values": {"_id":"http://data.silknow.org/object/aa4788c0-f59f-3503-9621-86f64ce43584"}
 }
