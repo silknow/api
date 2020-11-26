@@ -33,14 +33,14 @@
     "OPTIONAL { ?dig ecrm:P129_is_about ?production. ?dig a crmdig:D1_Digital_Object . ?dig ecrm:P129_is_about/ecrm:P42_assigned ?digTypeAssigned .  ?assignedGroup skos:member ?digTypeAssigned . ?assignedGroup skos:prefLabel ?assignedGroupLabel }"
   ],
   "$values": {"_id":"http://data.silknow.org/object/aa4788c0-f59f-3503-9621-86f64ce43584"},
-  "$prefixes": {	  "$prefixes": {
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",	    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "crmdig": "http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/",	    "crmdig": "http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/",
-    "ecrm": "http://erlangen-crm.org/current/",	    "ecrm": "http://erlangen-crm.org/current/",
-    "dc": "http://purl.org/dc/elements/1.1/",	    "dc": "http://purl.org/dc/elements/1.1/",
-    "schema": "http://schema.org/",	    "schema": "http://schema.org/",
-    "skos": "http://www.w3.org/2004/02/skos/core#",	    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",	    "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",
-    "geonames":"http://www.geonames.org/ontology#"	    "geonames":"http://www.geonames.org/ontology#"
+  "$prefixes": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",	  
+    "crmdig": "http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/",	  
+    "ecrm": "http://erlangen-crm.org/current/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "geonames":"http://www.geonames.org/ontology#"
   }
 }
