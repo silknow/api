@@ -1,7 +1,7 @@
 {
   "proto": {
     "id": "?id",
-    "label": "$rdfs:label",
+    "label": "$rdfs:label$required",
     "identifier": "$dc:identifier$required",
     "production": {
       "id": "?production",
@@ -15,7 +15,7 @@
         "country" : "$geonames:parentCountry/geonames:name$var:?__country"
       },
       "technique": "$ecrm:P32_used_general_technique/skos:prefLabel$var:?__technique$lang",
-      "time": "$ecrm:P4_has_time-span/skos:prefLabel$required$var:?__time$lang",
+      "time": "?__time$lang",
       "category":{
         "id": "?assignedGroup",
         "label": "?assignedGroupLabel"
@@ -25,7 +25,10 @@
   "$where": [
     "?id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?id",
-    "OPTIONAL { ?dig ecrm:P129_is_about ?production. ?dig a crmdig:D1_Digital_Object . ?dig ecrm:P129_is_about/ecrm:P42_assigned ?digTypeAssigned .  ?assignedGroup skos:member ?digTypeAssigned . ?assignedGroup skos:prefLabel ?assignedGroupLabel }"
+    "OPTIONAL { ?typ ecrm:P41_classified ?id; ecrm:P42_assigned ?digTypeAssigned . ?assignedGroup skos:member ?digTypeAssigned . ?assignedGroup skos:prefLabel ?assignedGroupLabel }",
+    "{ ?production ecrm:P4_has_time-span/ecrm:P86_falls_within ?ts} UNION { ?production ecrm:P4_has_time-span ?ts }",
+    "?ts skos:inScheme <http://vocab.getty.edu/aat/>",
+    "?ts skos:prefLabel ?__time"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
