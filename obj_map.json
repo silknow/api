@@ -25,7 +25,7 @@
   "$where": [
     "?id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?id",
-    "OPTIONAL { ?typ ecrm:P41_classified ?_id; ecrm:P42_assigned ?digTypeAssigned . ?assignedGroup skos:member ?digTypeAssigned . ?assignedGroup skos:prefLabel ?assignedGroupLabel }",
+    "OPTIONAL { ?typ ecrm:P41_classified ?id; ecrm:P42_assigned ?digTypeAssigned . ?assignedGroup skos:member ?digTypeAssigned . ?assignedGroup skos:prefLabel ?assignedGroupLabel }",
     "{ ?production ecrm:P4_has_time-span/ecrm:P86_falls_within ?ts} UNION { ?production ecrm:P4_has_time-span ?ts }",
     "?ts skos:inScheme <http://vocab.getty.edu/aat/>",
     "?ts skos:prefLabel ?__time"
