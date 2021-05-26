@@ -30,7 +30,7 @@
   "$where": [
     "?_id a ecrm:E22_Man-Made_Object",
     "?production ecrm:P108_has_produced ?_id",
-    "OPTIONAL { ?typ ecrm:P41_classified ?_id; ecrm:P42_assigned ?digTypeAssigned . ?assignedGroup skos:member ?digTypeAssigned . ?assignedGroup skos:prefLabel ?assignedGroupLabel }"
+    "OPTIONAL { ?typ ecrm:P41_classified ?_id; silk:L4|silk:L1 ?digTypeAssigned . ?assignedGroup skos:member ?digTypeAssigned . ?assignedGroup skos:prefLabel ?assignedGroupLabel }"
   ],
   "$values": {"_id":"http://data.silknow.org/object/aa4788c0-f59f-3503-9621-86f64ce43584"},
   "$prefixes": {
