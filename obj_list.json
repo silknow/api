@@ -42,7 +42,7 @@
     "summary": "Obtain a list of silk objects",
     "tag": ["objects"],
     "pagination": 100,
-    "enumerate": {
+    "enumerate": [{
       "museum":[
         "http://data.silknow.org/graph/vam",
         "http://data.silknow.org/graph/mfa",
@@ -63,6 +63,6 @@
         "http://data.silknow.org/graph/mtmad",
         "http://data.silknow.org/graph/paris-musees"
       ]
-    }
+    }]
   }
 }
