@@ -1,33 +1,68 @@
 {
   "proto": {
     "id": "?id",
-    "label": "$rdfs:label|dc:identifier$required",
+    "label": "$rdfs:label",
+    "identifier": "$dc:identifier$required",
     "production": {
       "id": "?production",
       "material": "$ecrm:P126_employed$var:?__material",
       "location": {
-           "id" : "$ecrm:P8_took_place_on_or_within",
-           "label" : "$rdfs:label$var:?__location$required",
-	         "lat" : "$geo:lat",
-           "long" : "$geo:long"
+        "id" : "$ecrm:P8_took_place_on_or_within",
+        "label" : "$geonames:name$var:?__location$required",
+        "lat" : "$geo:lat",
+        "long" : "$geo:long"
       },
       "technique": "$ecrm:P32_used_general_technique$var:?__technique",
-      "time": "$ecrm:P4_has_time-span/rdfs:label$var:?__time"
-    }
+      "time": "$ecrm:P4_has_time-span/skos:prefLabel$var:?__time"
+    },
+    "depiction": "$ecrm:P65_shows_visual_item",
+    "type":{
+      "id": "?digTypeAssigned",
+      "label":"$skos:prefLabel$var:?__type$lang"
+    },
+    "museum" : "?__museum",
+    "collection": "$ecrm:P106_is_composed_of$reverse$var:?__collection"
   },
   "$where": [
-    "?id a ecrm:E22_Man-Made_Object",
-    "?production ecrm:P108_has_produced ?id"
+    "GRAPH ?__museum {?id a ecrm:E22_Man-Made_Object}",
+    "?production ecrm:P108_has_produced ?id",
+    "?typ ecrm:P41_classified ?id; silk:L4|silk:L1 ?digTypeAssigned"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "crmdig": "http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/",
     "ecrm": "http://erlangen-crm.org/current/",
     "dc": "http://purl.org/dc/elements/1.1/",
-    "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#"
+    "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "geonames":"http://www.geonames.org/ontology#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "silk": "http://data.silknow.org/ontology/property/"
   },
   "grlc": {
     "summary": "Obtain a list of silk objects",
     "tag": ["objects"],
-    "pagination": 100
+    "pagination": 100,
+    "enumerate": {
+      "museum":[
+        "http://data.silknow.org/graph/vam",
+        "http://data.silknow.org/graph/mfa",
+        "http://data.silknow.org/graph/garin",
+        "http://data.silknow.org/graph/joconde",
+        "http://data.silknow.org/graph/imatex",
+        "http://data.silknow.org/graph/artic",
+        "http://data.silknow.org/graph/el-tesoro",
+        "http://data.silknow.org/graph/met",
+        "http://data.silknow.org/graph/risd",
+        "http://data.silknow.org/graph/unipa",
+        "http://data.silknow.org/graph/cer",
+        "http://data.silknow.org/graph/mad",
+        "http://data.silknow.org/graph/mobilier",
+        "http://data.silknow.org/graph/smithsonian",
+        "http://data.silknow.org/graph/venezia",
+        "http://data.silknow.org/graph/versailles",
+        "http://data.silknow.org/graph/mtmad",
+        "http://data.silknow.org/graph/paris-musees"
+      ]
+    }
   }
 }
