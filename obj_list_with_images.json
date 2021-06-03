@@ -33,6 +33,7 @@
   ],
   "$filter": "STRSTARTS(STR(?img), \"https://silknow.org/\")",
   "$prefixes": {
+    "schema": "http://schema.org/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "crmdig": "http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/",
     "ecrm": "http://erlangen-crm.org/current/",

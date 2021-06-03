@@ -3,7 +3,6 @@
     "id": "?id",
     "label": "$rdfs:label",
     "identifier": "$dc:identifier$required",
-    "image": "$ecrm:P138i_has_representation/schema:contentUrl$required$var:img",
     "production": {
       "id": "?production",
       "material": "$ecrm:P126_employed/skos:prefLabel$lang$var:?__material",
