@@ -44,7 +44,7 @@
   "$langTag" : "hide",
   "grlc": {
     "summary": "Obtain a list of silk objects (map version)",
-    "tag": ["objects"],
+    "tag": ["map"],
     "pagination": 100
   }
 }

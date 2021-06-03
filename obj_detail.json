@@ -43,5 +43,10 @@
     "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",
     "geonames":"http://www.geonames.org/ontology#",
     "silk": "http://data.silknow.org/ontology/property/"
+  },
+  "grlc": {
+    "summary": "Obtain detail on an object",
+    "tag": ["detail"],
+    "pagination": 100
   }
 }
