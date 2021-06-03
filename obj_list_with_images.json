@@ -7,12 +7,7 @@
     "production": {
       "id": "?production",
       "material": "$ecrm:P126_employed/skos:prefLabel$lang$var:?__material",
-      "location": {
-        "id" : "$ecrm:P8_took_place_on_or_within",
-        "label" : "$geonames:name$var:?__location$required",
-        "lat" : "$geo:lat",
-        "long" : "$geo:long"
-      },
+      "location": "$ecrm:P8_took_place_on_or_within/geonames:name$var:?__location",
       "technique": "$ecrm:P32_used_general_technique/skos:prefLabel$lang$var:?__technique",
       "time": "$ecrm:P4_has_time-span/skos:prefLabel$lang$var:?__time"
     },
@@ -45,7 +40,7 @@
   },
   "grlc": {
     "summary": "Obtain a list of silk objects, including only those with an image",
-    "tag": ["list"],
+    "tags": ["list"],
     "pagination": 100,
     "enumerate": [{
       "museum":[

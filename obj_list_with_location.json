@@ -43,7 +43,7 @@
   },
   "grlc": {
     "summary": "Obtain a list of silk objects, including only those with a location",
-    "tag": ["list"],
+    "tags": ["list"],
     "pagination": 100,
     "enumerate": [{
       "museum":[
