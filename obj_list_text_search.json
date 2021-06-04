@@ -24,7 +24,7 @@
     "GRAPH ?__museum {?id a ecrm:E22_Man-Made_Object}",
     "?production ecrm:P108_has_produced ?id",
     "?typ ecrm:P41_classified ?id; silk:L4|silk:L1 ?digTypeAssigned",
-    "{ { ?id ?s1p ?s1o . ?s1o bif:contains '?_text' } UNION { ?id ?s1p ?s1o . FILTER(?s1o = ?_text) } UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . ?s2o bif:contains ?_text } UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . FILTER(?s2o = ?_text) }  UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . ?s2o ?s3p ?s3o . ?s3o bif:contains ?_text } UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . ?s2o ?s3p ?s3o . FILTER(?s3o = ?_text) } }"
+    "{ { ?id ?s1p ?s1o . FILTER(?s1o LIKE concat('%',?_text,'%')) } UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . FILTER(?s2o LIKE concat('%',?_text,'%')) } UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . ?s2o ?s3p ?s3o . FILTER(?s3o LIKE concat('%',?_text,'%')) } }"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
