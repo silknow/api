@@ -1,4 +1,4 @@
-{
+?s{
   "proto": {
     "id": "?id",
     "label": "$rdfs:label",
@@ -14,7 +14,7 @@
     "type":{
       "id": "?digTypeAssigned",
       "label":"$skos:prefLabel$var:?__type$lang$required",
-      "category": "$skos:member$reverse$?__category"
+      "category": "$skos:member$reverse$var:?__category"
     },
     "museum" : "?__museum",
     "collection": "$ecrm:P106_is_composed_of$reverse$var:?__collection"
@@ -24,7 +24,7 @@
     "GRAPH ?__museum {?id a ecrm:E22_Man-Made_Object}",
     "?production ecrm:P108_has_produced ?id",
     "?typ ecrm:P41_classified ?id; silk:L4|silk:L1 ?digTypeAssigned",
-    "{ { ?id ?_s1p ?_s1o . ?_s1o bif:contains '?_text' } UNION { ?id ?_s1p ?_s1o . FILTER(?_s1o = ?_text) } UNION { ?_s1o ?_s1p ?id . ?_s1o ?_s2p ?_s2o . ?_s2o bif:contains ?_text } UNION { ?_s1o ?_s1p ?id . ?_s1o ?_s2p ?_s2o . FILTER(?_s2o = ?_text) }  UNION { ?_s1o ?_s1p ?id . ?_s1o ?_s2p ?_s2o . ?_s2o ?_s3p ?_s3o . ?_s3o bif:contains ?_text } UNION { ?_s1o ?_s1p ?id . ?_s1o ?_s2p ?_s2o . ?_s2o ?_s3p ?_s3o . FILTER(?_s3o = ?_text) } }"
+    "{ { ?id ?s1p ?s1o . ?s1o bif:contains '?_text' } UNION { ?id ?s1p ?s1o . FILTER(?s1o = ?_text) } UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . ?s2o bif:contains ?_text } UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . FILTER(?s2o = ?_text) }  UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . ?s2o ?s3p ?s3o . ?s3o bif:contains ?_text } UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . ?s2o ?s3p ?s3o . FILTER(?s3o = ?_text) } }"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",

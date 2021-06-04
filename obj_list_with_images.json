@@ -15,7 +15,7 @@
     "type":{
       "id": "?digTypeAssigned",
       "label":"$skos:prefLabel$var:?__type$lang$required",
-      "category": "$skos:member$reverse$?__category"
+      "category": "$skos:member$reverse$var:?__category"
     },
     "museum" : "?__museum",
     "collection": "$ecrm:P106_is_composed_of$reverse$var:?__collection"
