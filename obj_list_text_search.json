@@ -23,7 +23,7 @@
   "$where": [
     "GRAPH ?__museum {?id a ecrm:E22_Man-Made_Object}",
     "?production ecrm:P108_has_produced ?id",
-    "{ ?id ?s1p ?s1o . FILTER regex(?s1o,concat('.*', ?_text, '.*')) } UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . FILTER regex(?s2o,concat('.*',?_text,'.*')) } UNION { ?s1o ?s1p ?id . ?s1o ?s2p ?s2o . ?s2o ?s3p ?s3o . FILTER regex(?s3o,concat('.*',?_text,'.*'))} ?typ ecrm:P41_classified ?id; silk:L4|silk:L1 ?digTypeAssigned"
+    "{ ?id rdfs:label|rdfs:comment ?s1o . FILTER regex(?s1o,concat('.*', ?_text, '.*')) } UNION { ?s1o ecrm:P108_has_produced ?id . ?s1o ?s2p ?s2o . FILTER regex(?s2o,concat('.*',?_text,'.*')) } UNION { ?s1o ecrm:P108_has_produced ?id . ?s1o ?s2p ?s2o . ?s2o ?s3p ?s3o . FILTER regex(?s3o,concat('.*',?_text,'.*'))} ?typ ecrm:P41_classified ?id; silk:L4|silk:L1 ?digTypeAssigned"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
