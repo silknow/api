@@ -26,8 +26,8 @@
   "$lang": "en",
   "$langTag" : "hide",
   "grlc": {
-    "summary": "Get details for a tesaurus concept",
-    "tag": ["objects"],
+    "summary": "Get some details about a particular concept defined in the thesaurus",
+    "tag": ["thesaurus"],
     "pagination": 100
   }
 }
