@@ -4,7 +4,11 @@
     "prefLabel": "$skos:prefLabel$required$lang",
     "child": {
       "id": "$skos:member|skos:narrower$var:child$required",
-      "prefLabel": "$skos:prefLabel$required$lang"
+      "prefLabel": "$skos:prefLabel$required$lang",
+      "child": {
+        "id": "$skos:member|skos:narrower",
+        "prefLabel": "$skos:prefLabel$required$lang"
+      }
     }
   },
   "$where": [

@@ -1,18 +1,18 @@
 {
   "proto": {
-    "id": "?__id$anchor",
+    "id": "?id$anchor",
     "prefLabel": "$skos:prefLabel$required$lang",
     "pri": "?pri"
   },
   "$where": [
-    "?__id a skos:Concept; skos:inScheme <http://data.silknow.org/vocabulary/silk-thesaurus>",
-    "?__id ?prop ?match"
+    "?id a skos:Concept; skos:inScheme <http://data.silknow.org/vocabulary/silk-thesaurus>",
+    "?id ?prop ?match"
   ],
   "$values": {
-    "?prop": "(skos:prefLabel) (skos:altLabel) (skos:hiddenLabel)",
-    "?prop ?pri": "(skos:prefLabel 1) (skos:altLabel 3) (skos:hiddenLabel 5)"
+    "?prop": "skos:prefLabel skos:altLabel skos:hiddenLabel)",
+    "(?prop ?pri)": "(skos:prefLabel 1) (skos:altLabel 3) (skos:hiddenLabel 5)"
   },
-  "$filter": "FILTER regex(?match, concat('.*', ?_text, '.*'))",
+  "$filter": "regex(?match, concat('.*', ?_text, '.*'))",
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "ecrm": "http://erlangen-crm.org/current/",
