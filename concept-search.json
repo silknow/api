@@ -11,7 +11,7 @@
   "$values": {
     "?prop": "skos:prefLabel skos:altLabel skos:hiddenLabel"
   },
-  "$filter": "regex(?match, concat('.*', ?_text, '.*'))",
+  "$filter": "regex(?match, concat('.*', ?_text, '.*'), 'i')",
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "ecrm": "http://erlangen-crm.org/current/",
