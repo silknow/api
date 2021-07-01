@@ -45,7 +45,7 @@
     "silk": "http://data.silknow.org/ontology/property/"
   },
   "grlc": {
-    "summary": "Obtain detail on an object",
+    "summary": "Get details information about a particular object",
     "tags": ["object"],
     "pagination": 100
   }
