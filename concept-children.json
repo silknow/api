@@ -1,0 +1,33 @@
+{
+  "proto": {
+    "id": "?__id$anchor",
+    "prefLabel": "$skos:prefLabel$required$lang",
+    "child": {
+      "id": "$skos:member|skos:narrower$var:child$required",
+      "prefLabel": "$skos:prefLabel$required$lang"
+    }
+  },
+  "$where": [
+    "?__id a ?rdfType",
+    "?child skos:inScheme <http://data.silknow.org/vocabulary/silk-thesaurus>"
+  ],
+  "$values": {
+    "?__id": "http://vocab.getty.edu/aat/300264090",
+    "?rdfType": "skos:Concept skos:Collection"
+  },
+  "$prefixes": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ecrm": "http://erlangen-crm.org/current/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "geonames":"http://www.geonames.org/ontology#",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "$lang": "en",
+  "$langTag" : "hide",
+  "grlc": {
+    "summary": "Get some details about a particular concept defined in the thesaurus",
+    "tags": ["thesaurus"],
+    "pagination": 100
+  }
+}
