@@ -6,11 +6,10 @@
   },
   "$where": [
     "?id a skos:Concept; skos:inScheme <http://data.silknow.org/vocabulary/silk-thesaurus>",
-    "?id ?prop ?match"
+    "BIND(xsd:string(if(?prop = skos:prefLabel,1, if(?prop = skos:altLabel, 3, 5))) as ?pri) ?id ?prop ?match"
   ],
   "$values": {
-    "?prop": "skos:prefLabel skos:altLabel skos:hiddenLabel)",
-    "(?prop ?pri)": "(skos:prefLabel 1) (skos:altLabel 3) (skos:hiddenLabel 5)"
+    "?prop": "skos:prefLabel skos:altLabel skos:hiddenLabel"
   },
   "$filter": "regex(?match, concat('.*', ?_text, '.*'))",
   "$prefixes": {
