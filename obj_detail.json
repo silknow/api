@@ -46,7 +46,7 @@
   },
   "grlc": {
     "summary": "Obtain detail on an object",
-    "tags": ["detail"],
+    "tags": ["object"],
     "pagination": 100
   }
 }

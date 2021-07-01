@@ -27,7 +27,7 @@
   "$langTag" : "hide",
   "grlc": {
     "summary": "Get some details about a particular concept defined in the thesaurus",
-    "tag": ["thesaurus"],
+    "tags": ["thesaurus"],
     "pagination": 100
   }
 }
