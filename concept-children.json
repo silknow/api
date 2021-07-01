@@ -30,7 +30,7 @@
   "$lang": "en",
   "$langTag" : "hide",
   "grlc": {
-    "summary": "Get some details about a particular concept defined in the thesaurus",
+    "summary": "Get all members/narrower terms of a given URI",
     "tags": ["thesaurus"],
     "pagination": 100
   }

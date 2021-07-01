@@ -23,7 +23,7 @@
   "$lang": "en",
   "$langTag" : "hide",
   "grlc": {
-    "summary": "Get some details about a particular concept defined in the thesaurus",
+    "summary": "Search SILKNOW thesaurus concepts using a string",
     "tags": ["thesaurus"],
     "pagination": 100
   }
