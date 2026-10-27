@@ -11,78 +11,84 @@
       "time": "$ecrm:P4_has_time-span/skos:prefLabel$lang$var:?__time"
     },
     "depiction": "$ecrm:P65_shows_visual_item",
-    "type":{
+    "type": {
       "id": "?digTypeAssigned",
-      "label":"$skos:prefLabel$var:?__type$lang$required",
+      "label": "?__type",
       "category": "$skos:member$reverse$var:?__category"
     },
-    "museum" : "?__museum",
+    "museum": "?__museum",
     "collection": "$ecrm:P106_is_composed_of$reverse$var:?__collection"
   },
   "$lang": "en",
   "$where": [
     "GRAPH ?__museum {?id a ecrm:E22_Man-Made_Object}",
     "?production ecrm:P108_has_produced ?id",
-    "{ ?id rdfs:label|rdfs:comment ?s1o . FILTER regex(?s1o,concat('.*', ?_text, '.*')) } UNION { ?s1o ecrm:P108_has_produced ?id . ?s1o ?s2p ?s2o . FILTER regex(?s2o,concat('.*',?_text,'.*')) } UNION { ?s1o ecrm:P108_has_produced ?id . ?s1o ?s2p ?s2o . ?s2o ?s3p ?s3o . FILTER regex(?s3o,concat('.*',?_text,'.*'))} ?typ ecrm:P41_classified ?id; silk:L4|silk:L1 ?digTypeAssigned"
+    "?typ ecrm:P41_classified ?id; silk:L4|silk:L1 ?digTypeAssigned.",
+    "?digTypeAssigned skos:prefLabel ?__type . FILTER(lang(?__type) = \"en\")",
+    "?id rdfs:label|rdfs:comment ?s1o . FILTER regex(?s1o, concat('.*', ?_text, '.*'), 'i')"
   ],
   "$prefixes": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "crmdig": "http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/",
     "ecrm": "http://erlangen-crm.org/current/",
     "dc": "http://purl.org/dc/elements/1.1/",
-    "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",
-    "geonames":"http://www.geonames.org/ontology#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "geonames": "http://www.geonames.org/ontology#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "silk": "http://data.silknow.org/ontology/"
   },
   "grlc": {
     "summary": "Obtain a list of silk objects using the text search",
-    "tags": ["list"],
+    "tags": [
+      "list"
+    ],
     "pagination": 100,
-    "enumerate": [{
-      "museum":[
-        "http://data.silknow.org/graph/vam",
-        "http://data.silknow.org/graph/mfa",
-        "http://data.silknow.org/graph/garin",
-        "http://data.silknow.org/graph/joconde",
-        "http://data.silknow.org/graph/imatex",
-        "http://data.silknow.org/graph/artic",
-        "http://data.silknow.org/graph/el-tesoro",
-        "http://data.silknow.org/graph/met",
-        "http://data.silknow.org/graph/risd",
-        "http://data.silknow.org/graph/unipa",
-        "http://data.silknow.org/graph/cer",
-        "http://data.silknow.org/graph/mad",
-        "http://data.silknow.org/graph/mobilier",
-        "http://data.silknow.org/graph/smithsonian",
-        "http://data.silknow.org/graph/venezia",
-        "http://data.silknow.org/graph/versailles",
-        "http://data.silknow.org/graph/mtmad",
-        "http://data.silknow.org/graph/paris-musees"
-      ]
-    },
-    {
-      "category":[
-        "http://data.silknow.org/vocabulary/facet/fabrics",
-        "http://data.silknow.org/vocabulary/facet/point_paper_plan",
-        "http://data.silknow.org/vocabulary/facet/drawings",
-        "http://data.silknow.org/vocabulary/facet/religious_accessories",
-        "http://data.silknow.org/vocabulary/facet/fabric_passementerie",
-        "http://data.silknow.org/vocabulary/facet/costume",
-        "http://data.silknow.org/vocabulary/facet/religious_attire",
-        "http://data.silknow.org/vocabulary/facet/costume_accessories",
-        "http://data.silknow.org/vocabulary/facet/womens_attire",
-        "http://data.silknow.org/vocabulary/facet/ornamental_fabrics",
-        "http://data.silknow.org/vocabulary/facet/sketch",
-        "http://data.silknow.org/vocabulary/facet/other_typesofobjects",
-        "http://data.silknow.org/vocabulary/facet/furniture",
-        "http://data.silknow.org/vocabulary/facet/festive_attire",
-        "http://data.silknow.org/vocabulary/facet/household_objects",
-        "http://data.silknow.org/vocabulary/facet/mens_attire",
-        "http://data.silknow.org/vocabulary/facet/civil_attire",
-        "http://data.silknow.org/vocabulary/facet/regional_attire",
-        "http://data.silknow.org/vocabulary/facet/childrens_attire"
-      ]
-      }]
-    }
+    "enumerate": [
+      {
+        "museum": [
+          "http://data.silknow.org/graph/vam",
+          "http://data.silknow.org/graph/mfa",
+          "http://data.silknow.org/graph/garin",
+          "http://data.silknow.org/graph/joconde",
+          "http://data.silknow.org/graph/imatex",
+          "http://data.silknow.org/graph/artic",
+          "http://data.silknow.org/graph/el-tesoro",
+          "http://data.silknow.org/graph/met",
+          "http://data.silknow.org/graph/risd",
+          "http://data.silknow.org/graph/unipa",
+          "http://data.silknow.org/graph/cer",
+          "http://data.silknow.org/graph/mad",
+          "http://data.silknow.org/graph/mobilier",
+          "http://data.silknow.org/graph/smithsonian",
+          "http://data.silknow.org/graph/venezia",
+          "http://data.silknow.org/graph/versailles",
+          "http://data.silknow.org/graph/mtmad",
+          "http://data.silknow.org/graph/paris-musees"
+        ]
+      },
+      {
+        "category": [
+          "http://data.silknow.org/vocabulary/facet/fabrics",
+          "http://data.silknow.org/vocabulary/facet/point_paper_plan",
+          "http://data.silknow.org/vocabulary/facet/drawings",
+          "http://data.silknow.org/vocabulary/facet/religious_accessories",
+          "http://data.silknow.org/vocabulary/facet/fabric_passementerie",
+          "http://data.silknow.org/vocabulary/facet/costume",
+          "http://data.silknow.org/vocabulary/facet/religious_attire",
+          "http://data.silknow.org/vocabulary/facet/costume_accessories",
+          "http://data.silknow.org/vocabulary/facet/womens_attire",
+          "http://data.silknow.org/vocabulary/facet/ornamental_fabrics",
+          "http://data.silknow.org/vocabulary/facet/sketch",
+          "http://data.silknow.org/vocabulary/facet/other_typesofobjects",
+          "http://data.silknow.org/vocabulary/facet/furniture",
+          "http://data.silknow.org/vocabulary/facet/festive_attire",
+          "http://data.silknow.org/vocabulary/facet/household_objects",
+          "http://data.silknow.org/vocabulary/facet/mens_attire",
+          "http://data.silknow.org/vocabulary/facet/civil_attire",
+          "http://data.silknow.org/vocabulary/facet/regional_attire",
+          "http://data.silknow.org/vocabulary/facet/childrens_attire"
+        ]
+      }
+    ]
   }
+}
