@@ -42,7 +42,7 @@
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "geo":"http://www.w3.org/2003/01/geo/wgs84_pos#",
     "geonames":"http://www.geonames.org/ontology#",
-    "silk": "http://data.silknow.org/ontology/property/"
+    "silk": "http://data.silknow.org/ontology/"
   },
   "grlc": {
     "summary": "Get details information about a particular object",
